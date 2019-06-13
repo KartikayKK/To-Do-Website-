@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To DO!!  </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style>
+      body{
+          background-color: black;
+      }
+      li{
+          background-color:white;
+          font-size: 30px;
+          border:black 2px solid;
+      }
+      input[type="checkbox"]{
+  width: 30px; 
+  height: 20px; }
+        .kk{
+            background-color:grey;
+        }
+  </style>
+    </head>
+    <body>
+
+        <div class="container" align="center">
+            <nav class="navbar navbar-light" style="background-color: #ffffff ;">
+                    <a class="navbar-brand" href="#">
+                            <img src="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-04-11/167954972050_5f09ee0e97b94a6299c8_512.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                            Check-List
+                          </a>
+                  </nav>
+                  <p></p>
+                  <div class="jumbotron">
+                        <h1 id="lk" class="display-4">TASKS FOR D-DAY!</h1>
+                        <p class="lead">A checklist is a type of job aid used to reduce failure by compensating for potential limits of human memory and attention. It helps to ensure consistency.</p>
+                        <hr class="my-4">
+                        <p>When a task is done it will be darkened just to remind you that that work has been done and if the work comes again click againon the added task and get to it.</p>
+                        <a class="btn btn-primary btn-lg" href="To-Do.html" role="button"> NEW DAY ! </a>
+                      </div>
+                    </div>  
+                    <button type="button" class="btn btn-primary btn-lg btn-light" onclick="kk()">Click To Add Task:</button>  
+                    <p> </p>    
+                    <ul >
+                        <li id="need">Nothing To Do...</li>
+                    </ul>
+                    <div class="container" align="center">
+                    <ul id="one" class="kk">
+                    </ul>
+                    <!-- <button type="button" class="btn btn-primary btn-lg btn-light" id='he' onclick="kk()">Task Done Today :)</button>    -->
+                </div>
+                <p>YOU ARE UNDER SURVEILLANCE</p>
+<script>
+    var t=0;
+var r=0;
+var i=0;
+var arr=[];
+var len=0;
+
+function kk()
+{   
+var kk = prompt("Add Task","Workout");
+arr.push(kk);                        
+var hn=arr[r];
+var node = document.createElement("li");
+var textnode = document.createTextNode(hn);
+node.appendChild(textnode);        
+r=r+1;                        
+  document.getElementById("one").appendChild(node);
+  var elem = document.getElementById('need');
+  elem.parentNode.removeChild(elem);
+  t=1;
+len=arr.length;
+
+var parent = document.getElementById('one');
+
+  parent.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+        event.target.classList.toggle('kk');
+      }
+    }, false);
+  
+}
+
+</script>
+    </body>
+</html>
